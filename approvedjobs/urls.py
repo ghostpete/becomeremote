@@ -20,6 +20,10 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls import static
 
+admin.site.site_header = "BecomeRemote Administration"
+admin.site.site_title = "BecomeRemote Admin Portal"
+admin.site.index_title = "Welcome to BecomeRemote Admin Portal"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("app.urls")),
