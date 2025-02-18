@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+  <title>BecomeRemote | Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700,900|Roboto+Mono:300,400,500">
+  <link rel="stylesheet" href="{% static 'home/css/style_1.css' %}">
+
+  <link rel="stylesheet" href="{% static 'home/css/bootstrap.min.css' %}">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'home/css/magnific-popup.css' %}">
+  <link rel="stylesheet" href="{% static 'home/css/jquery-ui.css' %}">
+  <link rel="stylesheet" href="{% static 'home/css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'home/css/owl.theme.default.min.css' %}">
+  <link rel="stylesheet" href="{% static 'home/css/bootstrap-datepicker.css' %}">
+  <link rel="stylesheet" href="{% static 'home/css/animate.css' %}">
+
+
+  <link rel="stylesheet" href="{% static 'home/css/flaticon.css' %}">
+  <link rel="stylesheet" href="{% static 'home/css/fl-bigmug-line.css' %}">
+
+  <link rel="stylesheet" href="{% static 'home/css/aos.css' %}">
+
+  <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+
+
+</head>
+
+<body>
+
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div> <!-- .site-mobile-menu -->
+
+
+    <header class="site-navbar py-1" role="banner">
+
+      <div class="container">
+        <div class="row align-items-center">
+
+          <div class="col-6 col-xl-2" style="padding-top: 10px; padding-bottom: 10px;">
+            <h1 class="mb-0"><a href="" class="text-black h2 mb-0"
+                style="text-decoration: none !important;">Become<strong>Romote</strong></a></h1>
+          </div>
+
+          <div class="col-10 col-xl-10 d-none d-xl-block">
+            <nav class="site-navigation text-right" role="navigation">
+
+              <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li class="has-children">
+                  <a href="category.html">Category</a>
+                  <ul class="dropdown">
+                    <li><a href="#">Full Time</a></li>
+                    <li><a href="#">Part Time</a></li>
+                    <li><a href="#">Freelance</a></li>
+                    <li><a href="#">Internship</a></li>
+                    <li><a href="#">Termporary</a></li>
+                  </ul>
+                </li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="new-post.html"><span class="rounded bg-primary py-2 px-3 text-white"><span
+                        class="h5 mr-2">+</span> Post a Job</span></a></li>
+              </ul>
+            </nav>
+          </div>
+
+          <div class="col-6 col-xl-2 text-right d-block">
+
+            <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#"
+                class="site-menu-toggle js-menu-toggle text-black"><span class="h3"></span></a></div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </header>
+
+    <div class="site-blocks-cover" style="background-image: url({% static 'home/images/bg-1.png' %});" data-aos="fade"
+      data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row row-custom align-items-center">
+          <div class="col-md-10">
+            <h1 class="mb-2 text-black w-75"><span>Become Remote</span> <span class="font-weight-bold">Virtual
+                Assistant</span> </h1>
+            <div class="" style="max-width: 200px;">
+              <a href="{% url 'login' %}" class="btn btn-primary py-3 btn-block">
+                <img width="30" src="{% static 'home/images/linkedInLogo.png' %}" alt=""> Apply with LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="site-section bg-light">
+      <div class="container">
+        <div class="row justify-content-start text-left mb-5">
+          <div class="col-md-9" data-aos="fade">
+            <h2 class="font-weight-bold text-black">Related Jobs</h2>
+          </div>
+
+        </div>
+
+        <!-- Job Listings -->
+        {% for job in jobs %}
+        <div class="row" data-aos="fade">
+          <div class="col-md-12">
+            <div class="job-post-item bg-white p-4 d-block d-md-flex align-items-center">
+              <div class="mb-4 mb-md-0 mr-5">
+                <div class="job-post-item-header d-flex align-items-center flex-wrap">
+                  <h2 class="mr-3 text-black h4">{{ job.job_title }}</h2>
+                  <div class="badge-wrap">
+                    <span class="bg-danger text-white badge py-2 px-4">{{ job.job_type }}</span>
+                  </div>
+                </div>
+                <div class="job-post-item-body d-block d-md-flex">
+                  <div class="mr-3"><span class="fl-bigmug-line-portfolio23"></span> <a href="#">
+                      {{ job.hiring_company}}
+                    </a>
+                  </div>
+                  <div><span class="fl-bigmug-line-big104"></span> <span>{{ job.location }}</span></div>
+                </div>
+                <div>Annual Pay: <span>{{ job.annual_pay }}</span></div>
+                <div>Eligibility: <span>{{ job.eligibility_countries }}</span></div>
+                <div>Deadline: <span>{{ job.deadline_date }}</span></div>
+              </div>
+              <div class="ml-auto">
+                <button class="btn btn-primary py-2 view-details" data-title="{{ job.job_title }}"
+                  data-company="{{ job.hiring_company }}" data-location="{{ job.location }}"
+                  data-pay="{{ job.annual_pay }}" data-eligibility="{{ job.eligibility_countries }}"
+                  data-deadline="{{ job.deadline_date }}" data-details="{{ job.details }}" data-bs-toggle="modal"
+                  data-bs-target="#jobModal">
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+        <!-- Job Details Modal -->
+        <div class="modal fade" id="jobModal" tabindex="-1" aria-labelledby="jobModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="jobModalLabel"></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p><strong>Company:</strong> <span id="jobCompany"></span></p>
+                <p><strong>Location:</strong> <span id="jobLocation"></span></p>
+                <p><strong>Annual Pay:</strong> <span id="jobPay"></span></p>
+                <p><strong>Eligibility:</strong> <span id="jobEligibility"></span></p>
+                <p><strong>Deadline:</strong> <span id="jobDeadline"></span></p>
+                <p><strong>Details:</strong> <span id="jobDetails"></span></p>
+              </div>
+
+              <a id="jobLinkedIn" href="{% url 'login' %}"
+                class="btn btn-primary w-60 d-inline-block text-white text-center"
+                style="max-width: 300px; margin: 0 auto 80px;" target="_blank"><img width="30"
+                  src="{% static 'home/images/linkedInLogo.png' %}" alt=""> Apply with LinkedIn</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row justify-content-center text-center mb-5">
+          <div class="col-md-6" data-aos="fade">
+            <h2 class="text-black">Why Become<strong>Remote</strong> </h2>
+          </div>
+        </div>
+        <div class="row hosting">
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-4" data-aos="fade" data-aos-delay="100">
+
+            <div class="unit-3 h-100 bg-white">
+
+              <div class="d-flex align-items-center mb-3 unit-3-heading">
+                <div class="unit-3-icon-wrap mr-4">
+                  <svg class="unit-3-svg" xmlns="http://www.w3.org/2000/svg" width="59px" height="68px">
+                    <path fill-rule="evenodd" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter"
+                      fill="none"
+                      d="M29.000,66.000 L1.012,49.750 L1.012,17.250 L29.000,1.000 L56.988,17.250 L56.988,49.750 L29.000,66.000 Z">
+                    </path>
+                  </svg><span class="unit-3-icon icon fl-bigmug-line-portfolio23"></span>
+                </div>
+                <h2 class="h5">Access to Global Opportunities</h2>
+              </div>
+              <div class="unit-3-body">
+                <p>Connect with top remote companies worldwide, opening doors to career opportunities beyond
+                  geographical limitations.</p>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-4" data-aos="fade" data-aos-delay="200">
+
+            <div class="unit-3 h-100 bg-white">
+
+              <div class="d-flex align-items-center mb-3 unit-3-heading">
+                <div class="unit-3-icon-wrap mr-4">
+                  <svg class="unit-3-svg" xmlns="http://www.w3.org/2000/svg" width="59px" height="68px">
+                    <path fill-rule="evenodd" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter"
+                      fill="none"
+                      d="M29.000,66.000 L1.012,49.750 L1.012,17.250 L29.000,1.000 L56.988,17.250 L56.988,49.750 L29.000,66.000 Z">
+                    </path>
+                  </svg><span class="unit-3-icon icon fl-bigmug-line-big104"></span>
+                </div>
+                <h2 class="h5">Curated Remote Jobs Only</h2>
+              </div>
+              <div class="unit-3-body">
+                <p>Say goodbye to irrelevant job listings—every opportunity on BecomeRemote is 100% remote, ensuring a
+                  perfect fit for
+                  flexible work.</p>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-4" data-aos="fade" data-aos-delay="300">
+
+            <div class="unit-3 h-100 bg-white">
+
+              <div class="d-flex align-items-center mb-3 unit-3-heading">
+                <div class="unit-3-icon-wrap mr-4">
+                  <svg class="unit-3-svg" xmlns="http://www.w3.org/2000/svg" width="59px" height="68px">
+                    <path fill-rule="evenodd" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter"
+                      fill="none"
+                      d="M29.000,66.000 L1.012,49.750 L1.012,17.250 L29.000,1.000 L56.988,17.250 L56.988,49.750 L29.000,66.000 Z">
+                    </path>
+                  </svg><span class="unit-3-icon icon fl-bigmug-line-airplane86"></span>
+                </div>
+                <h2 class="h5">Smart Job Matching</h2>
+              </div>
+              <div class="unit-3-body">
+                <p>Our AI-driven algorithm matches you with the best remote jobs based on your skills, experience, and
+                  career goals.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-4" data-aos="fade" data-aos-delay="400">
+
+            <div class="unit-3 h-100 bg-white">
+
+              <div class="d-flex align-items-center mb-3 unit-3-heading">
+                <div class="unit-3-icon-wrap mr-4">
+                  <svg class="unit-3-svg" xmlns="http://www.w3.org/2000/svg" width="59px" height="68px">
+                    <path fill-rule="evenodd" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter"
+                      fill="none"
+                      d="M29.000,66.000 L1.012,49.750 L1.012,17.250 L29.000,1.000 L56.988,17.250 L56.988,49.750 L29.000,66.000 Z">
+                    </path>
+                  </svg><span class="unit-3-icon icon fl-bigmug-line-user144"></span>
+                </div>
+                <h2 class="h5">Resume & Profile Optimization</h2>
+              </div>
+              <div class="unit-3-body">
+                <p>Boost your chances of getting hired with expert tips on creating a compelling remote-friendly resume
+                  and profile</p>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-4" data-aos="fade" data-aos-delay="500">
+
+            <div class="unit-3 h-100 bg-white">
+
+              <div class="d-flex align-items-center mb-3 unit-3-heading">
+                <div class="unit-3-icon-wrap mr-4">
+                  <svg class="unit-3-svg" xmlns="http://www.w3.org/2000/svg" width="59px" height="68px">
+                    <path fill-rule="evenodd" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter"
+                      fill="none"
+                      d="M29.000,66.000 L1.012,49.750 L1.012,17.250 L29.000,1.000 L56.988,17.250 L56.988,49.750 L29.000,66.000 Z">
+                    </path>
+                  </svg><span class="unit-3-icon icon fl-bigmug-line-clipboard68"></span>
+                </div>
+                <h2 class="h5">Direct Employer Connections</h2>
+              </div>
+              <div class="unit-3-body">
+                <p>Skip the long hiring process and connect directly with remote-friendly employers ready to hire.</p>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-4" data-aos="fade" data-aos-delay="600">
+
+            <div class="unit-3 h-100 bg-white">
+
+              <div class="d-flex align-items-center mb-3 unit-3-heading">
+                <div class="unit-3-icon-wrap mr-4">
+                  <svg class="unit-3-svg" xmlns="http://www.w3.org/2000/svg" width="59px" height="68px">
+                    <path fill-rule="evenodd" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter"
+                      fill="none"
+                      d="M29.000,66.000 L1.012,49.750 L1.012,17.250 L29.000,1.000 L56.988,17.250 L56.988,49.750 L29.000,66.000 Z">
+                    </path>
+                  </svg><span class="unit-3-icon icon fl-bigmug-line-user143"></span>
+                </div>
+                <h2 class="h5">Exclusive Remote Work Resources</h2>
+              </div>
+              <div class="unit-3-body">
+                <p>Get access to remote work guides, interview preparation tips, and productivity tools tailored for
+                  remote professionals.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="site-section block-4 bg-light">
+
+      <div class="container">
+
+        <div class="row justify-content-center text-center mb-5">
+          <div class="col-md-6" data-aos="fade">
+            <h2 class="text-black">Happy Professionals</h2>
+          </div>
+        </div>
+
+        <div class="nonloop-block-4 owl-carousel" data-aos="fade">
+          <div class="item col-md-8 mx-auto">
+
+            <div class="block-38 text-center bg-white p-4">
+              <div class="block-38-img">
+                <div class="block-38-header">
+                  <img src="{% static 'home/images/person_1.jpg' %}" alt="Image placeholder">
+                  <h3 class="block-38-heading">Elizabeth Graham</h3>
+                  <p class="block-38-subheading">Software Engineer, TechNova Solutions</p>
+                </div>
+                <div class="block-38-body">
+                  <p>This platform changed my life! I applied for a job through it, and within two weeks, I landed my
+                    dream role. The process
+                    was smooth, and the support team was always there to assist me </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="item col-md-8 mx-auto">
+            <div class="block-38 text-center bg-white p-4">
+              <div class="block-38-img">
+                <div class="block-38-header">
+                  <img src="{% static 'home/images/person_2.jpg' %}" alt="Image placeholder">
+                  <h3 class="block-38-heading">Sophia Martinez</h3>
+                  <p class="block-38-subheading">Marketing Specialist, BrightEdge Media</p>
+                </div>
+                <div class="block-38-body">
+                  <p>I was struggling to find the right job until I came across this platform. The job recommendations
+                    were spot on, and now
+                    I'm thriving in a company that truly values my skills! </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="item col-md-8 mx-auto">
+
+            <div class="block-38 text-center bg-white p-4">
+              <div class="block-38-img">
+                <div class="block-38-header">
+                  <img src="{% static 'home/images/testimonial2.png' %}" alt="Image placeholder">
+                  <h3 class="block-38-heading">Olu Tobi</h3>
+                  <p class="block-38-subheading">UI/UX Designer, Creative Labs</p>
+                </div>
+                <div class="block-38-body">
+                  <p>his platform helped me transition into a new industry with ease. The job listings were diverse, and
+                    I found my ideal
+                    role faster than I expected! </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="item col-md-8 mx-auto">
+            <div class="block-38 text-center bg-white p-4">
+              <div class="block-38-img">
+                <div class="block-38-header">
+                  <img src="{% static 'home/images/testimonial1.png' %}" alt="Image placeholder">
+                  <h3 class="block-38-heading">Emily Rodriguez</h3>
+                  <p class="block-38-subheading">HR Coordinator, PeopleFirst Inc.</p>
+                </div>
+                <div class="block-38-body">
+                  <p>I was skeptical at first, but this platform delivered beyond my expectations. I received multiple
+                    job offers, and I’m
+                    now working at an amazing company with great benefits! </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <footer class="">
+      <div class="container">
+
+
+
+        <div class="row pt-5 pb-5 text-center">
+          <div class="col-md-12">
+            <p>
+              Copyright &copy;
+              <script data-cfasync="false" src="{% static 'home/js/email-decode.min.js' %}"></script>
+              <script data-cfasync="false" src="{% static 'home/js/email-decode.min.js' %}"></script>
+              <script>document.write(new Date().getFullYear());</script> All Rights Reserved | <a
+                href="{% url 'home' %}" target="_blank">BecomeRemote</a>
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="{% static 'home/js/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'home/js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'home/js/jquery-ui.js' %}"></script>
+  <script src="{% static 'home/js/popper.min.js' %}"></script>
+  <script src="{% static 'home/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'home/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'home/js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'home/js/jquery.countdown.min.js' %}"></script>
+  <script src="{% static 'home/js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'home/js/bootstrap-datepicker.min.js' %}"></script>
+  <script src="{% static 'home/js/aos.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+
+  <script>
+
+    document.querySelectorAll(".view-details").forEach(button => {
+      button.addEventListener("click", function () {
+        document.getElementById("jobModalLabel").textContent = this.dataset.title;
+        document.getElementById("jobCompany").textContent = this.dataset.company;
+        document.getElementById("jobLocation").textContent = this.dataset.location;
+        document.getElementById("jobPay").textContent = this.dataset.pay;
+        document.getElementById("jobEligibility").textContent = this.dataset.eligibility;
+        document.getElementById("jobDeadline").textContent = this.dataset.deadline;
+        document.getElementById("jobDetails").textContent = this.dataset.details;
+      });
+    });
+
+  </script>
+
+  <script>
+    // This example displays an address form, using the autocomplete feature
+    // of the Google Places API to help users fill in the information.
+
+    // This example requires the Places library. Include the libraries=places
+    // parameter when you first load the API. For example:
+    // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+    var placeSearch, autocomplete;
+    var componentForm = {
+      street_number: 'short_name',
+      route: 'long_name',
+      locality: 'long_name',
+      administrative_area_level_1: 'short_name',
+      country: 'long_name',
+      postal_code: 'short_name'
+    };
+
+    function initAutocomplete() {
+      // Create the autocomplete object, restricting the search to geographical
+      // location types.
+      autocomplete = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+        { types: ['geocode'] });
+
+      // When the user selects an address from the dropdown, populate the address
+      // fields in the form.
+      autocomplete.addListener('place_changed', fillInAddress);
+    }
+
+    function fillInAddress() {
+      // Get the place details from the autocomplete object.
+      var place = autocomplete.getPlace();
+
+      for (var component in componentForm) {
+        document.getElementById(component).value = '';
+        document.getElementById(component).disabled = false;
+      }
+
+      // Get each component of the address from the place details
+      // and fill the corresponding field on the form.
+      for (var i = 0; i < place.address_components.length; i++) {
+        var addressType = place.address_components[i].types[0];
+        if (componentForm[addressType]) {
+          var val = place.address_components[i][componentForm[addressType]];
+          document.getElementById(addressType).value = val;
+        }
+      }
+    }
+
+    // Bias the autocomplete object to the user's geographical location,
+    // as supplied by the browser's 'navigator.geolocation' object.
+    function geolocate() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+          var geolocation = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+          var circle = new google.maps.Circle({
+            center: geolocation,
+            radius: position.coords.accuracy
+          });
+          autocomplete.setBounds(circle.getBounds());
+        });
+      }
+    }
+  </script>
+
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&libraries=places&callback=initAutocomplete"
+    async="" defer=""></script>
+
+  <script src="{% static 'home/js/main.js' %}"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23581568-13');
+  </script>
+
+
+</body>
+
+</html>
